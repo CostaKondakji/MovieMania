@@ -1,0 +1,8 @@
+﻿i:hover {
+    cursor: pointer;
+    color: #00008B;
+}
+
+.movie-card{
+    min-height: 450px;
+}
