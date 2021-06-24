@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar,Nav, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
@@ -24,16 +24,16 @@ export class NavMenu extends Component {
   render () {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+            <Navbar dark fixed="top" expand="lg" className="border-bottom mb-3">
           <Container>
             <NavbarBrand tag={Link} to="/">MovieMania</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">Profiles</NavLink>
-                </NavItem>
-              </ul>
+            <Collapse className="d-sm-inline-flex flex-sm-row" isOpen={!this.state.collapsed} navbar>
+                <Nav className="mr-auto" navbar>
+                    <NavItem>
+                        <NavLink tag={Link} className="nav-link" to="/profiles">Profiles</NavLink>
+                    </NavItem>
+                </Nav>
             </Collapse>
           </Container>
         </Navbar>
