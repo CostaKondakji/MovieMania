@@ -278,13 +278,17 @@ class ProfileComponent extends Component {
 
 				<hr />
 				<h2>My movies</h2>
-				<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gridGap: "2em" }}>
-					{profileMovie.map((movie, index) =>
-						<div key={index}>
-							<MovieListComponent movie={movie} status="added" onClick={(movieId) => this.deleteMovie(movieId)} ratingHandler={(movieId, rating) => this.giveRating(movieId,rating)} />
-						</div>
-					)}
-				</div>
+				{profileMovie.length > 0 ?
+					<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gridGap: "2em" }}>
+						{profileMovie.map((movie, index) =>
+							<div key={index}>
+								<MovieListComponent movie={movie} status="added" onClick={(movieId) => this.deleteMovie(movieId)} ratingHandler={(movieId, rating) => this.giveRating(movieId, rating)} />
+							</div>
+						)}
+					</div>
+					:
+					<p>You have no movies, feel free to add one from the list above</p>
+				}
 			</Container>
 		);
 	}
