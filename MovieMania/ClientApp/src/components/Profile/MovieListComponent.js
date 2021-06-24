@@ -6,8 +6,6 @@ import Box from '@material-ui/core/Box';
 
 function MovieListComponent(props) {
 
-    console.log("props: ", props);
-    //const [value, setValue] = React.useState(props.movie.rating);
 
     return (
         <Card className="movie-card">
@@ -30,7 +28,6 @@ function MovieListComponent(props) {
                         name="simple-controlled"
                         value={props.movie.rating}
                         onChange={(event, newValue) => {
-                            props.movie.rating = newValue;
                             props.ratingHandler(props.movie.id, newValue)
                         }}
                         />

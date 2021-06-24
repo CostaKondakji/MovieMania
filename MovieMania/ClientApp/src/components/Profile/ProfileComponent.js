@@ -202,7 +202,7 @@ class ProfileComponent extends Component {
 
 	async giveRating(movieId, rating) {
 
-		console.log("arrived");
+		console.log("arrived: ", movieId);
 		let inputs = {
 			"ProfileId": this.props.profileId,
 			"MovieId": movieId,
